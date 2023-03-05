@@ -1,3 +1,7 @@
+import typing
+from pathlib import Path
+from typing import Any
+
 import hcl2
 from pydantic import BaseModel
 from pydantic import create_model
@@ -6,6 +10,8 @@ from pydantic import Field
 from .exceptions import HCLMissingVariablesError
 from .exceptions import VariableMissingTypeError
 
+Model = typing.TypeVar("Model", bound="BaseModel")
+
 
 TERRAFORM_TYPE_TO_PYTHON_MAP = {
     "${string}": str,
@@ -13,19 +19,38 @@ TERRAFORM_TYPE_TO_PYTHON_MAP = {
     "${bool}": bool,
     "${list(string)}": list[str],
     "${list(number)}": list[float],
+    "${map(string)}": dict[str, str],
 }
 
 
-def file_to_pydantic_model(
-    path: str, model_name: str, ignore_missing_types: bool = True, default_type: str = "${string}"
-) -> BaseModel:
+def convert_file(
+    path: str | Path, model_name: str, ignore_missing_types: bool = True, default_type: str = "${string}"
+) -> type[Model]:
     with open(path) as fh:
         data = hcl2.load(fh)
-
     if "variable" not in data:
         raise HCLMissingVariablesError(f"{path} is not a valid terraform module variables file")
+    return _convert(
+        data=data, model_name=model_name, ignore_missing_types=ignore_missing_types, default_type=default_type
+    )
 
-    model_args = {}
+
+def convert_string(
+    data_str: str | Path, model_name: str, ignore_missing_types: bool = True, default_type: str = "${string}"
+) -> type[Model]:
+    data = hcl2.loads(data_str)
+    if "variable" not in data:
+        raise HCLMissingVariablesError("String is not a valid terraform module variables file")
+    return _convert(
+        data=data,
+        model_name=model_name,
+        ignore_missing_types=ignore_missing_types,
+        default_type=default_type,
+    )
+
+
+def _convert(data: dict[str, Any], model_name: str, ignore_missing_types: bool, default_type: str) -> type[Model]:
+    field_definitions: Any = {}
     for variable in data["variable"]:
         variable_name = list(variable.keys())[0]
         variable = variable[variable_name]
@@ -41,8 +66,8 @@ def file_to_pydantic_model(
             this_field = Field(default, description=description)
         else:
             this_field = Field(..., description=description)
-        model_args[variable_name] = (TERRAFORM_TYPE_TO_PYTHON_MAP[var_type], this_field)
+        field_definitions[variable_name] = (TERRAFORM_TYPE_TO_PYTHON_MAP[var_type], this_field)
 
-    this_model = create_model(model_name, **model_args)
+    this_model: type[Model] = create_model(__model_name=model_name, **field_definitions)
 
     return this_model

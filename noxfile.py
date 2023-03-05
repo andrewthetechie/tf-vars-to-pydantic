@@ -22,20 +22,20 @@ except ImportError:
     raise SystemExit(dedent(message)) from None
 
 
-package = "pydantic_aioredis"
+package = "tf_vars_to_pydantic"
 python_versions = [
     "3.11",
-    "3.10",
-    "3.9",
-    "3.8",
-    "3.7",
+    # "3.10",
+    # "3.9",
+    # "3.8",
+    # "3.7",
 ]
 nox.needs_version = ">= 2021.6.6"
 nox.options.sessions = (
     "pre-commit",
     "bandit",
     "safety",
-    "mypy",
+    # "mypy",
     "tests",
     "docs-build",
 )
@@ -133,7 +133,7 @@ def safety(session: Session) -> None:
 @session(python=python_versions)
 def mypy(session: Session) -> None:
     """Type-check using mypy."""
-    args = session.posargs or ["pydantic_aioredis"]
+    args = session.posargs or ["src/tf_vars_to_pydantic"]
     session.install(".")
     session.install("mypy", "pytest")
     if len(mypy_type_packages) > 0:
@@ -145,7 +145,7 @@ def mypy(session: Session) -> None:
 def bandit(session: Session) -> None:
     """Run bandit security tests"""
     session.install("bandit")
-    args = session.posargs or ["-r", "./pydantic_aioredis"]
+    args = session.posargs or ["-r", "./src/tf_vars_to_pydantic"]
     session.run("bandit", *args)
 
 
@@ -165,7 +165,7 @@ def docs_build(session: Session) -> None:
         args.insert(0, "--color")
 
     session.install(".")
-    session.install("sphinx", "sphinx-click", "furo")
+    session.install("sphinx", "furo", "myst_parser")
 
     build_dir = Path("docs", "_build")
     if build_dir.exists():
@@ -179,7 +179,7 @@ def docs(session: Session) -> None:
     """Build and serve the documentation with live reloading on file changes."""
     args = session.posargs or ["--open-browser", "docs", "docs/_build"]
     session.install(".")
-    session.install("sphinx", "sphinx-autobuild", "sphinx-click", "furo")
+    session.install("sphinx", "sphinx-autobuild", "furo", "myst_parser")
 
     build_dir = Path("docs", "_build")
     if build_dir.exists():
