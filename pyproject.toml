@@ -54,3 +54,6 @@ addopts = "-n 4 --ignore examples --cov=tf_vars_to_pydantic --cov-report xml:.co
 [tool.ruff]
 line-length = 120
 target-version = "py37"
+exclude =[
+    "tests/*"
+]

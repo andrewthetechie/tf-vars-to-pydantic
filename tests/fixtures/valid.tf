@@ -65,3 +65,35 @@ variable "map_w_default" {
   default     = {}
   type        = map(string)
 }
+
+variable "object" {
+  description = "object"
+  type = object({
+    param1 = string
+    param2 = string
+    param3 = map(list(string))
+  })
+}
+
+variable "object_w_defaults" {
+  description = "object with defaults"
+  type = object({
+    param1 = string
+    param2 = number
+    param3 = map(list(string))
+    param4 = list(number)
+    param5 = set(string)
+  })
+  default = {
+    param1 = "foo"
+    param2 = 7.1
+    param3 = {"foo" = ["bar", "baz", "boo"]}
+    param4 = [1, 2, 3]
+    param5 = ["bing", "bong", "boop"]
+  }
+}
+
+variable "bare_object" {
+  description = "object"
+  type = object
+}

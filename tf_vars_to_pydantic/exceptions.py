@@ -1,5 +1,10 @@
-class VariableMissingTypeError(Exception):
+class HCLMissingVariablesError(Exception):
     pass
 
-class HCLMissingVariablesError(Exception):
+
+class VariableMissingTypeError(TypeError):
+    pass
+
+
+class InvalidTFTypeStringError(TypeError):
     pass
