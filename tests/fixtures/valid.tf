@@ -97,3 +97,13 @@ variable "bare_object" {
   description = "object"
   type = object
 }
+
+
+variable "string_w_validation" {
+  description = "String with validation"
+  type       = string
+  validation {
+    condition     = length(var.string_w_validation) > 0
+    error_message = "String must not be empty."
+  }
+}
