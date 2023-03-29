@@ -1,5 +1,3 @@
-# Tf Vars To Pydantic
-
 <p align="center">
     <a href="https://github.com/andrewthetechie/tf-vars-to-pydantic" target="_blank">
         <img src="https://img.shields.io/github/last-commit/andrewthetechie/tf-vars-to-pydantic" alt="Latest Commit">
@@ -98,6 +96,20 @@ please [file an issue] along with a detailed description.
 ## Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/andrewthetechie"><img src="https://avatars.githubusercontent.com/u/1377314?v=4?s=100" width="100px;" alt="Andrew"/><br /><sub><b>Andrew</b></sub></a><br /><a href="https://github.com/andrewthetechie/tf-vars-to-pydantic/commits?author=andrewthetechie" title="Code">💻</a> <a href="https://github.com/andrewthetechie/tf-vars-to-pydantic/commits?author=andrewthetechie" title="Tests">⚠️</a> <a href="https://github.com/andrewthetechie/tf-vars-to-pydantic/commits?author=andrewthetechie" title="Documentation">📖</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 
