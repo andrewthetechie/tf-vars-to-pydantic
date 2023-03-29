@@ -1,8 +1,3 @@
-# Tf Vars To Pydantic
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-
 <p align="center">
     <a href="https://github.com/andrewthetechie/tf-vars-to-pydantic" target="_blank">
         <img src="https://img.shields.io/github/last-commit/andrewthetechie/tf-vars-to-pydantic" alt="Latest Commit">
