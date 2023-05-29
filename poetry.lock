@@ -944,14 +944,14 @@ testing = ["filelock"]
 
 [[package]]
 name = "python-hcl2"
-version = "4.3.1"
+version = "4.3.2"
 description = "A parser for HCL2"
 category = "main"
 optional = false
 python-versions = ">=3.7.0"
 files = [
-    {file = "python-hcl2-4.3.1.tar.gz", hash = "sha256:e1f9eb9a55d751cb2c8bc410639d248f2ede7ea86d83ae9bc1cf8c8d0e74e794"},
-    {file = "python_hcl2-4.3.1-py3-none-any.whl", hash = "sha256:3428b1391b0cf7c0c046aadfce5591e033b9c942b67c6179b90de4bb2d352b10"},
+    {file = "python-hcl2-4.3.2.tar.gz", hash = "sha256:7122661438be27ccd8b8f3db71969d8ef2cce3b3cf183e88f8172575e7405a65"},
+    {file = "python_hcl2-4.3.2-py3-none-any.whl", hash = "sha256:e958fe52ca0519e3500eb621caa16be6be9c27870cbcd1879d8c538fb85067ea"},
 ]
 
 [package.dependencies]
