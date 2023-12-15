@@ -24,7 +24,7 @@ TERRAFORM_TYPE_TO_PYTHON_MAP = {
 
 
 def convert_file(
-    path: str | Path, model_name: str, ignore_missing_types: bool = True, default_type: str = "${string}"
+    path: str | Path, model_name: str, ignore_missing_types: bool = True, default_type: Any = str
 ) -> type[_typing.Model]:
     with open(path) as fh:
         data = hcl2.load(fh)
@@ -36,7 +36,7 @@ def convert_file(
 
 
 def convert_string(
-    data_str: str | Path, model_name: str, ignore_missing_types: bool = True, default_type: str = "${string}"
+    data_str: str | Path, model_name: str, ignore_missing_types: bool = True, default_type: Any = str
 ) -> type[_typing.Model]:
     data = hcl2.loads(data_str)
     if "variable" not in data:
@@ -50,7 +50,7 @@ def convert_string(
 
 
 def _convert(
-    data: dict[str, Any], model_name: str, ignore_missing_types: bool, default_type: str
+    data: dict[str, Any], model_name: str, ignore_missing_types: bool, default_type: Any = None
 ) -> type[_typing.Model]:
     field_definitions: Any = {}
     for variable in data["variable"]:

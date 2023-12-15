@@ -13,6 +13,10 @@ variable "string_var_wo_description" {
   type        = string
 }
 
+variable "string_var_w_nothing" {
+}
+
+
 variable "bool_var" {
   description = "Boolean variable"
   type        = bool
