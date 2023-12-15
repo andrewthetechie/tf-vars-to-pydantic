@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/andrewthetechie/tf-vars-to-pydantic/compare/v0.1.1...v0.1.2) (2023-12-15)
+
+
+### Bug Fixes
+
+* handle missing variable type ([4e2aca1](https://github.com/andrewthetechie/tf-vars-to-pydantic/commit/4e2aca17e54770074b3b82f00ac64bcdb2d74403))
+
 ## [0.1.1](https://github.com/andrewthetechie/tf-vars-to-pydantic/compare/v0.1.0...v0.1.1) (2023-12-15)
 
 

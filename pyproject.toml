@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "tf-vars-to-pydantic"
-version = "0.1.1"
+version = "0.1.2"
 description = "Tf Vars To Pydantic"
 authors = ["Andrew Herrington <andrew.the.techie@gmail.com>"]
 license = "MIT"
