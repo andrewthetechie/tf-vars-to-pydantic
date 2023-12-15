@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.1](https://github.com/andrewthetechie/tf-vars-to-pydantic/compare/v0.1.0...v0.1.1) (2023-12-15)
+
+
+### Bug Fixes
+
+* update python requirements ([2c9c288](https://github.com/andrewthetechie/tf-vars-to-pydantic/commit/2c9c28867e02e7317ce1b46ff043c22664bcfc88))
+
+
+### Documentation
+
+* add andrewthetechie as a contributor for code, test, and doc ([#38](https://github.com/andrewthetechie/tf-vars-to-pydantic/issues/38)) ([1e1d447](https://github.com/andrewthetechie/tf-vars-to-pydantic/commit/1e1d447936fcbfd3784525ac5ff48f44bd74249c))
+
 ## 0.1.0 (2023-03-06)
 
 
