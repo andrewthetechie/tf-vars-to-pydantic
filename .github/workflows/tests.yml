@@ -46,13 +46,13 @@ jobs:
 
       - name: Install Poetry
         run: |
-          pipx install --pip-args=--constraint=.github/workflows/constraints.txt poetry
+          pip install --constraint=.github/workflows/constraints.txt poetry
           poetry --version
 
       - name: Install Nox
         run: |
-          pipx install --pip-args=--constraint=.github/workflows/constraints.txt nox
-          pipx inject --pip-args=--constraint=.github/workflows/constraints.txt nox nox-poetry toml
+          pip install --constraint=.github/workflows/constraints.txt nox
+          pip install --constraint=.github/workflows/constraints.txt nox nox-poetry toml
           nox --version
 
       - name: Compute pre-commit cache key
