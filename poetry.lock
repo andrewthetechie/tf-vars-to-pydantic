@@ -2,13 +2,13 @@
 
 [[package]]
 name = "alabaster"
-version = "0.7.13"
+version = "0.7.14"
 description = "A configurable sidebar-enabled Sphinx theme"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.9"
 files = [
-    {file = "alabaster-0.7.13-py3-none-any.whl", hash = "sha256:1ee19aca801bbabb5ba3f5f258e4422dfa86f82f3e9cefb0859b283cdd7f62a3"},
-    {file = "alabaster-0.7.13.tar.gz", hash = "sha256:a27a4a084d5e690e16e01e03ad2b2e552c61a65469419b907243193de1a84ae2"},
+    {file = "alabaster-0.7.14-py3-none-any.whl", hash = "sha256:bae0286b61103c84f426bd21faaca8624725a089cf640d95f9ab9901c897fc9f"},
+    {file = "alabaster-0.7.14.tar.gz", hash = "sha256:c84aa888cf8ebce113ef3fbbd63092aeb8cff9e6274ed2f27d014ca16f258948"},
 ]
 
 [[package]]
