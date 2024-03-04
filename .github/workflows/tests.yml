@@ -111,7 +111,7 @@ jobs:
           name: coverage-data
 
       - name: Upload coverage report
-        uses: codecov/codecov-action@v3.1.5
+        uses: codecov/codecov-action@v4.1.0
         with:
           files: .coverage.xml
           verbose: true
